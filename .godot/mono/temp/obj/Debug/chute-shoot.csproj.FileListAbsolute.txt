@@ -1,0 +1,17 @@
+K:\_Personal\chute-shoot\.godot\mono\temp\bin\Debug\chute-shoot.deps.json
+K:\_Personal\chute-shoot\.godot\mono\temp\bin\Debug\chute-shoot.runtimeconfig.json
+K:\_Personal\chute-shoot\.godot\mono\temp\bin\Debug\chute-shoot.dll
+K:\_Personal\chute-shoot\.godot\mono\temp\bin\Debug\chute-shoot.pdb
+K:\_Personal\chute-shoot\.godot\mono\temp\bin\Debug\GodotSharp.dll
+K:\_Personal\chute-shoot\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+K:\_Personal\chute-shoot\.godot\mono\temp\obj\Debug\chute-shoot.csproj.AssemblyReference.cache
+K:\_Personal\chute-shoot\.godot\mono\temp\obj\Debug\chute-shoot.GeneratedMSBuildEditorConfig.editorconfig
+K:\_Personal\chute-shoot\.godot\mono\temp\obj\Debug\chute-shoot.AssemblyInfoInputs.cache
+K:\_Personal\chute-shoot\.godot\mono\temp\obj\Debug\chute-shoot.AssemblyInfo.cs
+K:\_Personal\chute-shoot\.godot\mono\temp\obj\Debug\chute-shoot.csproj.CoreCompileInputs.cache
+K:\_Personal\chute-shoot\.godot\mono\temp\obj\Debug\chute-shoot.csproj.CopyComplete
+K:\_Personal\chute-shoot\.godot\mono\temp\obj\Debug\chute-shoot.dll
+K:\_Personal\chute-shoot\.godot\mono\temp\obj\Debug\refint\chute-shoot.dll
+K:\_Personal\chute-shoot\.godot\mono\temp\obj\Debug\chute-shoot.pdb
+K:\_Personal\chute-shoot\.godot\mono\temp\obj\Debug\chute-shoot.genruntimeconfig.cache
+K:\_Personal\chute-shoot\.godot\mono\temp\obj\Debug\ref\chute-shoot.dll
