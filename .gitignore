@@ -1,2 +1,22 @@
 # Godot 4+ specific ignores
-.godot/
+.godot/**
+.vscode/**
+.godot/editor/create_recent.Node
+.godot/editor/editor_layout.cfg
+.godot/editor/filesystem_cache8
+.godot/editor/filesystem_update4
+.godot/editor/main.tscn-editstate-3070c538c03ee49b7677ff960a3f5195.cfg
+.godot/editor/main.tscn-folding-3070c538c03ee49b7677ff960a3f5195.cfg
+.godot/editor/project_metadata.cfg
+.godot/editor/recent_dirs
+.godot/editor/script_editor_cache.cfg
+.godot/mono/temp/bin/Debug/chute-shoot.dll
+.godot/mono/temp/bin/Debug/chute-shoot.pdb
+.godot/mono/temp/obj/chute-shoot.csproj.nuget.dgspec.json
+.godot/mono/temp/obj/project.nuget.cache
+.godot/mono/temp/obj/Debug/chute-shoot.csproj.CoreCompileInputs.cache
+.godot/mono/temp/obj/Debug/chute-shoot.dll
+.godot/mono/temp/obj/Debug/chute-shoot.genruntimeconfig.cache
+.godot/mono/temp/obj/Debug/chute-shoot.pdb
+.godot/mono/temp/obj/Debug/ref/chute-shoot.dll
+.godot/mono/temp/obj/Debug/refint/chute-shoot.dll

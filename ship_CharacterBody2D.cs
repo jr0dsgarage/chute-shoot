@@ -12,7 +12,7 @@ public partial class ship_CharacterBody2D: CharacterBody2D
 
 	public void GetInput()
 	{
-		if (0 < Position.X && Position.X < 480)
+		if (0 < Position.Y && Position.Y < 480)
 		{
 			Velocity = Transform.X * Input.GetAxis("up", "down") * Speed;
 		}
@@ -20,8 +20,7 @@ public partial class ship_CharacterBody2D: CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		GetInput();
-		
+		GetInput();		
 		MoveAndSlide();
 	}
 }
