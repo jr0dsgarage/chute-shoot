@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq136boqg2lil"]
+
+[ext_resource type="Texture2D" uid="uid://b4jajisgqibuh" path="res://layer-0.png" id="2_je8gu"]
+[ext_resource type="Texture2D" uid="uid://bwuf20hw7ek52" path="res://layer-1.png" id="3_kwhca"]
+
+[node name="Background" type="CanvasLayer"]
+
+[node name="Layer-0" type="Sprite2D" parent="."]
+position = Vector2(320, 240)
+texture = ExtResource("2_je8gu")
+
+[node name="Layer-1" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(320, 240)
+texture = ExtResource("3_kwhca")
