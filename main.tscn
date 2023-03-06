@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://da85f7y5px2vs"]
+[gd_scene load_steps=10 format=3 uid="uid://cbasov0s5sn3d"]
 
 [ext_resource type="Script" path="res://main.cs" id="1_t0y1e"]
 [ext_resource type="Texture2D" uid="uid://b4jajisgqibuh" path="res://layer-0.png" id="2_ou7k4"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bwuf20hw7ek52" path="res://layer-1.png" id="3_ohtai"]
 [ext_resource type="Script" path="res://ship_CharacterBody2D.cs" id="3_rkdgj"]
 [ext_resource type="Script" path="res://bgLayer_01.cs" id="4_86g5c"]
+[ext_resource type="Script" path="res://HUD.cs" id="7_5lbrf"]
+[ext_resource type="Script" path="res://ship_Information.cs" id="8_qmr20"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x2re"]
 
@@ -40,10 +42,21 @@ rotation = 1.5708
 scale = Vector2(0.5, 0.5)
 motion_mode = 1
 script = ExtResource("3_rkdgj")
-Speed = 200
 
 [node name="ship_Sprite2D" type="Sprite2D" parent="ship_CharacterBody2D"]
 texture = ExtResource("3_5n5mh")
 
 [node name="ship_CollisionShape2D" type="CollisionShape2D" parent="ship_CharacterBody2D"]
 shape = SubResource("RectangleShape2D_7x2re")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("7_5lbrf")
+
+[node name="ship_Information" type="Label" parent="HUD"]
+offset_left = 397.0
+offset_top = 21.0
+offset_right = 437.0
+offset_bottom = 44.0
+script = ExtResource("8_qmr20")
