@@ -6,15 +6,15 @@ public partial class ship_CharacterBody2D : CharacterBody2D
     [Export]
     public int Speed { get; set; } = 600;
 
-	public float shipSize;
-	public float bottomClamp;
+    public float shipSize;
+    public float bottomClamp;
 
     public void GetInput()
     {
-		shipSize = (GetNode<CollisionShape2D>("ship_CollisionShape2D").Shape.GetRect().Size.X);
-		bottomClamp = 480 - shipSize;
-		// topClamp = shipSize;
-        if (bottomClamp < Position.Y || Position.Y < shipSize)
+        shipSize = (GetNode<CollisionShape2D>("ship_CollisionShape2D").Shape.GetRect().Size.X);
+        bottomClamp = 480 - shipSize;
+
+        if (bottomClamp < Position.Y || Position.Y < shipSize)// topClamp = 0 + shipSize;
         {
             Velocity = Velocity with { Y = -Velocity.Y };
         }
