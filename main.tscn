@@ -35,6 +35,7 @@ stretch_mode = 1
 script = ExtResource("4_86g5c")
 
 [node name="ship_CharacterBody2D" type="CharacterBody2D" parent="."]
+top_level = true
 y_sort_enabled = true
 texture_repeat = 2
 position = Vector2(97, 237)
