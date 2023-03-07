@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbasov0s5sn3d"]
+[gd_scene load_steps=17 format=3 uid="uid://cbasov0s5sn3d"]
 
 [ext_resource type="Script" path="res://main.cs" id="1_t0y1e"]
 [ext_resource type="Texture2D" uid="uid://b4jajisgqibuh" path="res://layer-0.png" id="2_ou7k4"]
@@ -7,7 +7,46 @@
 [ext_resource type="Script" path="res://ship_CharacterBody2D.cs" id="3_rkdgj"]
 [ext_resource type="Script" path="res://bgLayer_01.cs" id="4_86g5c"]
 [ext_resource type="Script" path="res://HUD.cs" id="7_5lbrf"]
+[ext_resource type="Texture2D" uid="uid://dyptwxanewudr" path="res://puff.svg" id="7_6231i"]
 [ext_resource type="Script" path="res://ship_Information.cs" id="8_qmr20"]
+[ext_resource type="Script" path="res://puff_GPUParticles2D.cs" id="8_v0ja4"]
+
+[sub_resource type="Gradient" id="Gradient_7ycfb"]
+offsets = PackedFloat32Array(0, 0.761905)
+colors = PackedColorArray(0, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jw21x"]
+gradient = SubResource("Gradient_7ycfb")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_o8l3d"]
+_data = [Vector2(0.0102041, 0.163636), 0.0, 0.0, 0, 0, Vector2(0.986395, 0.918182), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_asht8"]
+curve = SubResource("Curve_o8l3d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7imkm"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 2.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 180.98
+angular_velocity_min = -420.0
+angular_velocity_max = -150.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = 50.0
+linear_accel_max = 75.0
+scale_min = 0.0
+scale_curve = SubResource("CurveTexture_asht8")
+color_ramp = SubResource("GradientTexture1D_jw21x")
+turbulence_enabled = true
+turbulence_noise_strength = 0.75
+turbulence_noise_scale = 5.0
+turbulence_influence_min = 0.05
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x2re"]
 
@@ -43,6 +82,16 @@ rotation = 1.5708
 scale = Vector2(0.5, 0.5)
 motion_mode = 1
 script = ExtResource("3_rkdgj")
+
+[node name="puff_GPUParticles2D" type="GPUParticles2D" parent="ship_CharacterBody2D"]
+show_behind_parent = true
+position = Vector2(0, 50)
+amount = 75
+process_material = SubResource("ParticleProcessMaterial_7imkm")
+texture = ExtResource("7_6231i")
+lifetime = 2.0
+visibility_rect = Rect2(-100, -100, 220, 200)
+script = ExtResource("8_v0ja4")
 
 [node name="ship_Sprite2D" type="Sprite2D" parent="ship_CharacterBody2D"]
 texture = ExtResource("3_5n5mh")

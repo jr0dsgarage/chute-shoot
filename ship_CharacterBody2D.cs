@@ -6,8 +6,8 @@ public partial class ship_CharacterBody2D : CharacterBody2D
     [Export]
     public int Speed { get; set; } = 600;
 
-    public float shipSize;
-    public float bottomClamp;
+    private float shipSize;
+    private float bottomClamp;
 
     public void GetInput()
     {
