@@ -1,13 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://cbasov0s5sn3d"]
+[gd_scene load_steps=17 format=3 uid="uid://csfeua003jle5"]
 
 [ext_resource type="Script" path="res://main.cs" id="1_t0y1e"]
 [ext_resource type="Texture2D" uid="uid://b4jajisgqibuh" path="res://layer-0.png" id="2_ou7k4"]
-[ext_resource type="Texture2D" uid="uid://br6nv8fsftuge" path="res://icon.svg" id="3_5n5mh"]
 [ext_resource type="Texture2D" uid="uid://bwuf20hw7ek52" path="res://layer-1.png" id="3_ohtai"]
 [ext_resource type="Script" path="res://ship_CharacterBody2D.cs" id="3_rkdgj"]
 [ext_resource type="Script" path="res://bgLayer_01.cs" id="4_86g5c"]
+[ext_resource type="Texture2D" uid="uid://dyptwxanewudr" path="res://sprites/puff.svg" id="6_smtl8"]
 [ext_resource type="Script" path="res://HUD.cs" id="7_5lbrf"]
-[ext_resource type="Texture2D" uid="uid://dyptwxanewudr" path="res://puff.svg" id="7_6231i"]
+[ext_resource type="Texture2D" uid="uid://cj5r0jxw5ngp5" path="res://sprites/ship.svg" id="8_df30s"]
 [ext_resource type="Script" path="res://ship_Information.cs" id="8_qmr20"]
 [ext_resource type="Script" path="res://puff_GPUParticles2D.cs" id="8_v0ja4"]
 
@@ -49,6 +49,7 @@ turbulence_noise_scale = 5.0
 turbulence_influence_min = 0.05
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x2re"]
+size = Vector2(80, 60)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_t0y1e")
@@ -77,26 +78,27 @@ script = ExtResource("4_86g5c")
 top_level = true
 y_sort_enabled = true
 texture_repeat = 2
-position = Vector2(97, 237)
+position = Vector2(100, 240)
 rotation = 1.5708
-scale = Vector2(0.5, 0.5)
 motion_mode = 1
 script = ExtResource("3_rkdgj")
 
 [node name="puff_GPUParticles2D" type="GPUParticles2D" parent="ship_CharacterBody2D"]
 show_behind_parent = true
-position = Vector2(0, 50)
+position = Vector2(0, 25)
 amount = 75
 process_material = SubResource("ParticleProcessMaterial_7imkm")
-texture = ExtResource("7_6231i")
+texture = ExtResource("6_smtl8")
 lifetime = 2.0
 visibility_rect = Rect2(-100, -100, 220, 200)
 script = ExtResource("8_v0ja4")
 
 [node name="ship_Sprite2D" type="Sprite2D" parent="ship_CharacterBody2D"]
-texture = ExtResource("3_5n5mh")
+scale = Vector2(0.333, 0.5)
+texture = ExtResource("8_df30s")
 
 [node name="ship_CollisionShape2D" type="CollisionShape2D" parent="ship_CharacterBody2D"]
+position = Vector2(0, -7.62939e-06)
 shape = SubResource("RectangleShape2D_7x2re")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]

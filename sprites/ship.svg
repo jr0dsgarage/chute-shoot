@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="64mm"
+   height="32mm"
+   viewBox="0 0 64.000002 32"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="ship.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title1009">Chute Shooter MKI</title>
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="4.319769"
+     inkscape:cx="76.508721"
+     inkscape:cy="132.41449"
+     inkscape:window-width="3440"
+     inkscape:window-height="1369"
+     inkscape:window-x="2552"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="mirror_symmetry"
+       start_point="137.78498,163.3841"
+       end_point="1.2303614,163.3841"
+       center_point="69.50767,163.3841"
+       id="path-effect2842"
+       is_visible="true"
+       lpeversion="1.2"
+       lpesatellites=""
+       mode="vertical"
+       discard_orig_path="false"
+       fuse_paths="false"
+       oposite_fuse="false"
+       split_items="false"
+       split_open="false"
+       link_styles="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1.9521671,-10.54991)">
+    <g
+       id="g2840"
+       inkscape:path-effect="#path-effect2842"
+       class="UnoptimicedTransforms"
+       transform="matrix(0,-0.23432654,0.26513517,0,-9.0904933,42.8374)">
+      <path
+         id="rect741"
+         style="fill:#4f73c2;fill-opacity:1;stroke:#000000;stroke-width:1.354;stroke-linecap:round"
+         d="M 26.89484,52.922104 H 44.172649 L 79.958311,135.41196 26.89484,128.49438 Z m 0,218.840446 h 17.277809 l 35.785662,-82.48986 -53.063471,6.91758 z"
+         sodipodi:nodetypes="ccccc"
+         inkscape:original-d="M 26.89484,52.922104 H 44.172649 L 79.958311,135.41196 26.89484,128.49438 Z" />
+      <path
+         id="rect743"
+         style="fill:#125fff;stroke:#000000;stroke-width:1.354;stroke-linecap:round"
+         d="M 2.5676407,47.360299 46.11161,42.66259 62.959111,47.360299 v 4.089276 L 46.11161,54.922761 2.5676407,50.427128 Z m 0,229.964051 43.5439693,4.69771 16.847501,-4.69771 v -4.08927 L 46.11161,269.76189 2.5676407,274.25753 Z"
+         sodipodi:nodetypes="ccccccc"
+         inkscape:original-d="M 2.5676407,47.360299 46.11161,42.66259 62.959111,47.360299 v 4.089276 L 46.11161,54.922761 2.5676407,50.427128 Z" />
+      <path
+         id="rect1035"
+         style="fill:#151a23;fill-opacity:1;stroke:#000000;stroke-width:1.354;stroke-linecap:round"
+         d="m 13.087328,152.06288 4.447647,-4.5236 v 14.82549 h -4.447647 z m 0,20.55889 4.447647,4.5236 v -14.82549 h -4.447647 z"
+         sodipodi:nodetypes="ccccc"
+         inkscape:original-d="m 13.087328,152.06288 4.447647,-4.5236 v 14.82549 h -4.447647 z" />
+      <path
+         id="rect1020"
+         style="fill:#2f384c;fill-opacity:1;stroke:#000000;stroke-width:1.354;stroke-linecap:round"
+         d="m 17.381368,142.72384 v 19.64093 h 6.339665 V 136.5989 Z m 0,39.23697 v -19.64093 h 6.339665 v 25.76587 z"
+         sodipodi:nodetypes="ccccc"
+         inkscape:original-d="m 17.381368,142.72384 v 19.64093 h 6.339665 V 136.5989 Z" />
+      <path
+         id="rect739"
+         style="fill:#6c7ea5;fill-opacity:1;stroke:#000000;stroke-width:1.354;stroke-linecap:round"
+         d="m 23.713798,127.41229 v 34.95248 H 136.43071 l -3.94475,-11.43535 -41.163799,-7.0631 -6.855646,-9.79352 z m 0,69.86007 V 162.31988 H 136.43071 l -3.94475,11.43535 -41.163799,7.0631 -6.855646,9.79352 z"
+         sodipodi:nodetypes="ccccccc"
+         inkscape:original-d="m 23.713798,127.41229 v 34.95248 H 136.43071 l -3.94475,-11.43535 -41.163799,-7.0631 -6.855646,-9.79352 z" />
+    </g>
+  </g>
+  <metadata
+     id="metadata1007">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Chute Shooter MKI</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

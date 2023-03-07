@@ -11,10 +11,10 @@ public partial class ship_CharacterBody2D : CharacterBody2D
 
     public void GetInput()
     {
-        shipSize = (GetNode<CollisionShape2D>("ship_CollisionShape2D").Shape.GetRect().Size.X);
-        bottomClamp = 480 - shipSize;
+        shipSize = GetNode<CollisionShape2D>("ship_CollisionShape2D").Shape.GetRect().Size.X;
+        bottomClamp = 480 - shipSize/2;
 
-        if (bottomClamp < Position.Y || Position.Y < shipSize)// topClamp = 0 + shipSize;
+        if (bottomClamp < Position.Y || Position.Y < shipSize/2) // topClamp = 0 + shipSize/2;
         {
             Velocity = Velocity with { Y = -Velocity.Y };
         }
