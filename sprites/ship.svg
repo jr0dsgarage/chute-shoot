@@ -29,17 +29,40 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="4.319769"
-     inkscape:cx="76.508721"
-     inkscape:cy="132.41449"
+     inkscape:zoom="5.12"
+     inkscape:cx="150.58594"
+     inkscape:cy="80.273438"
      inkscape:window-width="3440"
      inkscape:window-height="1369"
      inkscape:window-x="2552"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     showguides="true">
+    <sodipodi:guide
+       position="31.936035,39.027994"
+       orientation="1,0"
+       id="guide6541"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
   <defs
      id="defs2">
+    <inkscape:path-effect
+       effect="mirror_symmetry"
+       start_point="137.40438,162.13"
+       end_point="0.83773818,162.13"
+       center_point="69.499175,102.51368"
+       id="path-effect2920"
+       is_visible="true"
+       lpeversion="1.2"
+       lpesatellites=""
+       mode="free"
+       discard_orig_path="false"
+       fuse_paths="true"
+       oposite_fuse="true"
+       split_items="false"
+       split_open="false"
+       link_styles="false" />
     <inkscape:path-effect
        effect="mirror_symmetry"
        start_point="137.78498,163.3841"
@@ -64,38 +87,39 @@
      transform="translate(-1.9521671,-10.54991)">
     <g
        id="g2840"
-       inkscape:path-effect="#path-effect2842"
        class="UnoptimicedTransforms"
-       transform="matrix(0,-0.23432654,0.26513517,0,-9.0904933,42.8374)">
+       transform="matrix(0,-0.23431784,0.26689696,0,-9.3185528,42.746207)"
+       inkscape:path-effect="#path-effect2920">
       <path
          id="rect741"
          style="fill:#4f73c2;fill-opacity:1;stroke:#000000;stroke-width:1.354;stroke-linecap:round"
-         d="M 26.89484,52.922104 H 44.172649 L 79.958311,135.41196 26.89484,128.49438 Z m 0,218.840446 h 17.277809 l 35.785662,-82.48986 -53.063471,6.91758 z"
+         d="M 26.89484,52.922104 H 44.172649 L 79.958311,135.41196 26.89484,128.49438 Z m 0,218.415796 h 17.277809 l 35.785662,-82.48986 -53.063471,6.91758 z"
          sodipodi:nodetypes="ccccc"
          inkscape:original-d="M 26.89484,52.922104 H 44.172649 L 79.958311,135.41196 26.89484,128.49438 Z" />
       <path
          id="rect743"
          style="fill:#125fff;stroke:#000000;stroke-width:1.354;stroke-linecap:round"
-         d="M 2.5676407,47.360299 46.11161,42.66259 62.959111,47.360299 v 4.089276 L 46.11161,54.922761 2.5676407,50.427128 Z m 0,229.964051 43.5439693,4.69771 16.847501,-4.69771 v -4.08927 L 46.11161,269.76189 2.5676407,274.25753 Z"
+         d="M 2.5676407,47.360299 46.11161,42.66259 62.959111,47.360299 v 4.089276 L 46.11161,54.922761 2.5676407,50.427128 Z m 0,229.539401 43.5439693,4.69771 16.847501,-4.69771 v -4.08928 L 46.11161,269.33724 2.5676407,273.83287 Z"
          sodipodi:nodetypes="ccccccc"
          inkscape:original-d="M 2.5676407,47.360299 46.11161,42.66259 62.959111,47.360299 v 4.089276 L 46.11161,54.922761 2.5676407,50.427128 Z" />
       <path
          id="rect1035"
          style="fill:#151a23;fill-opacity:1;stroke:#000000;stroke-width:1.354;stroke-linecap:round"
-         d="m 13.087328,152.06288 4.447647,-4.5236 v 14.82549 h -4.447647 z m 0,20.55889 4.447647,4.5236 v -14.82549 h -4.447647 z"
+         d="m 17.535156,147.53906 -4.447265,4.52344 v 10.06836 10.06641 l 4.447265,4.52343 v -14.58984 z"
          sodipodi:nodetypes="ccccc"
          inkscape:original-d="m 13.087328,152.06288 4.447647,-4.5236 v 14.82549 h -4.447647 z" />
       <path
          id="rect1020"
          style="fill:#2f384c;fill-opacity:1;stroke:#000000;stroke-width:1.354;stroke-linecap:round"
-         d="m 17.381368,142.72384 v 19.64093 h 6.339665 V 136.5989 Z m 0,39.23697 v -19.64093 h 6.339665 v 25.76587 z"
+         d="m 23.720703,136.59961 -6.339844,6.125 v 19.40625 19.40625 l 6.339844,6.12305 v -25.5293 z"
          sodipodi:nodetypes="ccccc"
          inkscape:original-d="m 17.381368,142.72384 v 19.64093 h 6.339665 V 136.5989 Z" />
       <path
          id="rect739"
          style="fill:#6c7ea5;fill-opacity:1;stroke:#000000;stroke-width:1.354;stroke-linecap:round"
-         d="m 23.713798,127.41229 v 34.95248 H 136.43071 l -3.94475,-11.43535 -41.163799,-7.0631 -6.855646,-9.79352 z m 0,69.86007 V 162.31988 H 136.43071 l -3.94475,11.43535 -41.163799,7.0631 -6.855646,9.79352 z"
+         d="m 23.712891,127.41211 v 34.71875 34.7168 l 60.753906,-6.66016 6.855469,-9.79297 41.164064,-7.06445 3.86328,-11.19922 -3.86328,-11.20117 -41.164064,-7.0625 -6.855469,-9.79492 z"
          sodipodi:nodetypes="ccccccc"
+         inkscape:label="rect739"
          inkscape:original-d="m 23.713798,127.41229 v 34.95248 H 136.43071 l -3.94475,-11.43535 -41.163799,-7.0631 -6.855646,-9.79352 z" />
     </g>
   </g>
