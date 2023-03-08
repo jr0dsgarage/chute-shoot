@@ -14,7 +14,7 @@ config/name="chute-shoot"
 config/description="My first Godot project, a shoot-em-up idea based off of a pun."
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.0", "C#", "Forward Plus")
-config/icon="res://sprites/icon.svg"
+config/icon="res://sprites/ship.svg"
 
 [display]
 
