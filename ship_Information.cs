@@ -11,13 +11,16 @@ public partial class ship_Information : Label
 	{
 		 shipRef = GetNode<ship_CharacterBody2D>("/root/main/ship_CharacterBody2D");
 		 puffRef = GetNode<puff_GPUParticles2D>("/root/main/ship_CharacterBody2D/puff_GPUParticles2D");
-
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		//GD.Print(shipRef.Position.X);
-		Text = $"XPos: {shipRef.Position.X}\nYpos: {shipRef.Position.Y}\nXVel: {shipRef.Velocity.X}\nYVel: {shipRef.Velocity.Y}\nSpeed:{shipRef.Speed}\nVPM: {puffRef.velocityPuffModifier}";
+		Text = $@"XPos: {shipRef.Position.X}
+				Ypos: {shipRef.Position.Y}
+				XVel: {shipRef.Velocity.X}
+				YVel: {shipRef.Velocity.Y}
+				Speed:{shipRef.Speed}
+				VPM: {puffRef.velocityPuffModifier}";
 	}
 }
