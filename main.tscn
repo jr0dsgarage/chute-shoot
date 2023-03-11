@@ -112,3 +112,7 @@ offset_top = 21.0
 offset_right = 437.0
 offset_bottom = 44.0
 script = ExtResource("8_qmr20")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 240)
+scale = Vector2(0.459, 0.459)
