@@ -21,6 +21,6 @@ public partial class ship_Information : Label
 				XVel: {_shipRef.Velocity.X}
 				YVel: {_shipRef.Velocity.Y}
 				Speed:{_shipRef.Speed}
-				VPM: {_puffRef.VelocityPuffModifier}";
+				VPM: {_puffRef.VelocityPuffModifier} (not-used)";
 	}
 }
