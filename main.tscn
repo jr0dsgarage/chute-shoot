@@ -75,19 +75,19 @@ stretch_mode = 1
 script = ExtResource("4_1fb5c")
 
 [node name="bgLayer_02" type="TextureRect" parent="."]
-visible = false
 texture_repeat = 2
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 640.0
-offset_top = 2.0
-offset_right = 1920.0
-offset_bottom = 482.0
+offset_top = 1.0
+offset_right = 1280.0
+offset_bottom = 481.0
 grow_horizontal = 2
 size_flags_stretch_ratio = 2.0
 texture = ExtResource("3_ohtai")
 stretch_mode = 1
+flip_h = true
+flip_v = true
 script = ExtResource("4_1fb5c")
 
 [node name="ship_CharacterBody2D" type="CharacterBody2D" parent="."]

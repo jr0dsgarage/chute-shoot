@@ -1,8 +1,12 @@
 using Godot;
 using System;
 
-public partial class bgLayer_01 : TextureRect
+public partial class bgLayer : TextureRect
 {
+	[Export]
+	public int ScrollSpeed { get => _scrollSpeedMultiplier ; set => _scrollSpeedMultiplier = value; }
+
+	private int _scrollSpeedMultiplier = 1;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -14,7 +18,7 @@ public partial class bgLayer_01 : TextureRect
 	{
 		if (Position.X >= -640)
 		{
-			Position = Position with { X = Position.X - 1.0f };
+			Position = Position with { X = Position.X - (1.0f * _scrollSpeedMultiplier) };
 		}
 		if (Position.X == -640)
 		{
