@@ -1,15 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://dt1sm43sgrvfg"]
+[gd_scene load_steps=17 format=3 uid="uid://djekfauxmjvsn"]
 
 [ext_resource type="Script" path="res://main.cs" id="1_t0y1e"]
-[ext_resource type="Texture2D" uid="uid://b4jajisgqibuh" path="res://layer-0.png" id="2_ou7k4"]
-[ext_resource type="Texture2D" uid="uid://bwuf20hw7ek52" path="res://layer-1.png" id="3_ohtai"]
-[ext_resource type="Script" path="res://ship_CharacterBody2D.cs" id="3_rkdgj"]
-[ext_resource type="Script" path="res://bgLayer.cs" id="4_1fb5c"]
+[ext_resource type="Texture2D" uid="uid://b4jajisgqibuh" path="res://images/layer-0.png" id="2_eyrew"]
+[ext_resource type="Texture2D" uid="uid://bwuf20hw7ek52" path="res://images/layer-1.png" id="3_p56yx"]
+[ext_resource type="Script" path="res://code/bgLayer.cs" id="4_daduj"]
+[ext_resource type="Script" path="res://code/ship_CharacterBody2D.cs" id="5_37v2o"]
 [ext_resource type="Texture2D" uid="uid://dyptwxanewudr" path="res://sprites/puff.svg" id="6_smtl8"]
-[ext_resource type="Script" path="res://HUD.cs" id="7_5lbrf"]
+[ext_resource type="Script" path="res://code/puff_GPUParticles2D.cs" id="7_1vi3h"]
 [ext_resource type="Texture2D" uid="uid://cj5r0jxw5ngp5" path="res://sprites/ship.svg" id="8_df30s"]
-[ext_resource type="Script" path="res://ship_Information.cs" id="8_qmr20"]
-[ext_resource type="Script" path="res://puff_GPUParticles2D.cs" id="8_v0ja4"]
+[ext_resource type="Script" path="res://code/HUD.cs" id="9_cjo3e"]
+[ext_resource type="Script" path="res://code/ship_Information.cs" id="10_cbd6e"]
 
 [sub_resource type="Gradient" id="Gradient_7ycfb"]
 offsets = PackedFloat32Array(0, 0.761905)
@@ -57,7 +57,7 @@ script = ExtResource("1_t0y1e")
 [node name="bgLayer_00" type="TextureRect" parent="."]
 offset_right = 640.0
 offset_bottom = 480.0
-texture = ExtResource("2_ou7k4")
+texture = ExtResource("2_eyrew")
 stretch_mode = 3
 
 [node name="bgLayer_01" type="TextureRect" parent="."]
@@ -70,9 +70,10 @@ offset_right = 1280.0
 offset_bottom = 481.0
 grow_horizontal = 2
 size_flags_stretch_ratio = 2.0
-texture = ExtResource("3_ohtai")
+texture = ExtResource("3_p56yx")
 stretch_mode = 1
-script = ExtResource("4_1fb5c")
+script = ExtResource("4_daduj")
+ScrollSpeed = 0.8
 
 [node name="bgLayer_02" type="TextureRect" parent="."]
 texture_repeat = 2
@@ -84,11 +85,12 @@ offset_right = 1280.0
 offset_bottom = 481.0
 grow_horizontal = 2
 size_flags_stretch_ratio = 2.0
-texture = ExtResource("3_ohtai")
+texture = ExtResource("3_p56yx")
 stretch_mode = 1
 flip_h = true
 flip_v = true
-script = ExtResource("4_1fb5c")
+script = ExtResource("4_daduj")
+ScrollSpeed = 1.2
 
 [node name="ship_CharacterBody2D" type="CharacterBody2D" parent="."]
 top_level = true
@@ -97,7 +99,7 @@ texture_repeat = 2
 position = Vector2(100, 240)
 rotation = 1.5708
 motion_mode = 1
-script = ExtResource("3_rkdgj")
+script = ExtResource("5_37v2o")
 
 [node name="puff_GPUParticles2D" type="GPUParticles2D" parent="ship_CharacterBody2D"]
 show_behind_parent = true
@@ -107,7 +109,7 @@ process_material = SubResource("ParticleProcessMaterial_7imkm")
 texture = ExtResource("6_smtl8")
 lifetime = 2.0
 visibility_rect = Rect2(-100, -100, 220, 200)
-script = ExtResource("8_v0ja4")
+script = ExtResource("7_1vi3h")
 
 [node name="ship_Sprite2D" type="Sprite2D" parent="ship_CharacterBody2D"]
 scale = Vector2(0.333, 0.5)
@@ -120,14 +122,14 @@ shape = SubResource("RectangleShape2D_7x2re")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="HUD" type="CanvasLayer" parent="."]
-script = ExtResource("7_5lbrf")
+script = ExtResource("9_cjo3e")
 
 [node name="ship_Information" type="Label" parent="HUD"]
 offset_left = 397.0
 offset_top = 21.0
 offset_right = 437.0
 offset_bottom = 44.0
-script = ExtResource("8_qmr20")
+script = ExtResource("10_cbd6e")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(320, 240)
