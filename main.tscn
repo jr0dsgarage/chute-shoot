@@ -1,10 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://csfeua003jle5"]
+[gd_scene load_steps=17 format=3 uid="uid://dt1sm43sgrvfg"]
 
 [ext_resource type="Script" path="res://main.cs" id="1_t0y1e"]
 [ext_resource type="Texture2D" uid="uid://b4jajisgqibuh" path="res://layer-0.png" id="2_ou7k4"]
 [ext_resource type="Texture2D" uid="uid://bwuf20hw7ek52" path="res://layer-1.png" id="3_ohtai"]
 [ext_resource type="Script" path="res://ship_CharacterBody2D.cs" id="3_rkdgj"]
-[ext_resource type="Script" path="res://bgLayer_01.cs" id="4_86g5c"]
+[ext_resource type="Script" path="res://bgLayer.cs" id="4_1fb5c"]
 [ext_resource type="Texture2D" uid="uid://dyptwxanewudr" path="res://sprites/puff.svg" id="6_smtl8"]
 [ext_resource type="Script" path="res://HUD.cs" id="7_5lbrf"]
 [ext_resource type="Texture2D" uid="uid://cj5r0jxw5ngp5" path="res://sprites/ship.svg" id="8_df30s"]
@@ -72,7 +72,23 @@ grow_horizontal = 2
 size_flags_stretch_ratio = 2.0
 texture = ExtResource("3_ohtai")
 stretch_mode = 1
-script = ExtResource("4_86g5c")
+script = ExtResource("4_1fb5c")
+
+[node name="bgLayer_02" type="TextureRect" parent="."]
+visible = false
+texture_repeat = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 640.0
+offset_top = 2.0
+offset_right = 1920.0
+offset_bottom = 482.0
+grow_horizontal = 2
+size_flags_stretch_ratio = 2.0
+texture = ExtResource("3_ohtai")
+stretch_mode = 1
+script = ExtResource("4_1fb5c")
 
 [node name="ship_CharacterBody2D" type="CharacterBody2D" parent="."]
 top_level = true
