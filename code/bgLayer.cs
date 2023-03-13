@@ -17,8 +17,8 @@ public partial class bgLayer : TextureRect
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		// bg_layers are twice the screen width and tiled 
-		if (Position.X >= -640)
+		// bg_layers are twice the screen width and tiled, then scaled
+		if (Position.X >= -640 * Scale.X)
 		{
 			Position = Position with { X = Position.X - (1.0f * _scrollSpeedMultiplier) };
 		}
