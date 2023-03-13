@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://djekfauxmjvsn"]
+[gd_scene load_steps=18 format=3 uid="uid://djekfauxmjvsn"]
 
 [ext_resource type="Script" path="res://main.cs" id="1_t0y1e"]
 [ext_resource type="Texture2D" uid="uid://b4jajisgqibuh" path="res://images/layer-0.png" id="2_eyrew"]
@@ -50,6 +50,15 @@ turbulence_influence_min = 0.05
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x2re"]
 size = Vector2(80, 60)
+
+[sub_resource type="LabelSettings" id="LabelSettings_drg5u"]
+line_spacing = 2.0
+font_size = 20
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 6
+shadow_color = Color(0, 0.847059, 0.85098, 0.917647)
+shadow_offset = Vector2(2, 2)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_t0y1e")
@@ -130,6 +139,9 @@ offset_left = 397.0
 offset_top = 21.0
 offset_right = 437.0
 offset_bottom = 44.0
+text = "default 
+text"
+label_settings = SubResource("LabelSettings_drg5u")
 script = ExtResource("10_cbd6e")
 
 [node name="Camera2D" type="Camera2D" parent="."]

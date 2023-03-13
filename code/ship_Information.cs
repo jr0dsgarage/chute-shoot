@@ -19,7 +19,8 @@ public partial class ship_Information : Label
 		var hotkeyToggle = Input.IsActionJustPressed("debugInfoToggle");
 		if (Visible)
 		{
-			Text = $@"XPos: {_shipRef.Position.X}
+			Text = $@"Ship Information:
+					XPos: {_shipRef.Position.X}
 					Ypos: {_shipRef.Position.Y}
 					XVel: {_shipRef.Velocity.X}
 					YVel: {_shipRef.Velocity.Y}
