@@ -4,8 +4,8 @@ using System;
 // Prints currently relevant info about the player controlled ship_CharacterBody2D onto the game screen
 public partial class ship_Information : Label
 {
-    private ship_CharacterBody2D _shipRef;
-    private puff_GPUParticles2D _puffRef;
+    private static ship_CharacterBody2D _shipRef;
+    private static puff_GPUParticles2D _puffRef;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
