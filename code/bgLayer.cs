@@ -22,7 +22,7 @@ public partial class bgLayer : TextureRect
 		{
 			Position = Position with { X = Position.X - (1.0f * _scrollSpeedMultiplier) };
 		}
-		if (Position.X <= -640)
+		else
 		{
 			Position = Position with { X = 0.0f };
 		}
