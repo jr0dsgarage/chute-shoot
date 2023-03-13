@@ -125,6 +125,7 @@ shape = SubResource("RectangleShape2D_7x2re")
 script = ExtResource("9_cjo3e")
 
 [node name="ship_Information" type="Label" parent="HUD"]
+visible = false
 offset_left = 397.0
 offset_top = 21.0
 offset_right = 437.0
