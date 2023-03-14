@@ -9,7 +9,7 @@ public partial class bgLayer : TextureRect
 	public bool UseVerticalParallax { get => _verticalParallaxEnabled ; set => _verticalParallaxEnabled = value;}
 	private static ship_CharacterBody2D _shipRef;
 	private float _scrollSpeedMultiplier = 1.0f;
-	private bool _verticalParallaxEnabled = false;
+	private bool _verticalParallaxEnabled;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
