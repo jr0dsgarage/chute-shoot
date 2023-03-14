@@ -101,6 +101,7 @@ flip_h = true
 flip_v = true
 script = ExtResource("4_daduj")
 ScrollSpeed = 1.2
+UseParallax = true
 
 [node name="ship_CharacterBody2D" type="CharacterBody2D" parent="."]
 top_level = true
