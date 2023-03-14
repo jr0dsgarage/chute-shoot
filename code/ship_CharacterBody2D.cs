@@ -15,7 +15,7 @@ public partial class ship_CharacterBody2D : CharacterBody2D
         if (_bottomClamp < Position.Y || Position.Y < _shipSize / 2) // topClamp = 0 + shipSize/2;
         {
             // TODO - Screen Edge Bouncing should use Collision objects in prep for chutes
-            Velocity = Velocity with { Y = -Velocity.Y }; 
+            Velocity = Velocity with { Y = -Velocity.Y };
         }
         else
         {
