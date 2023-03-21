@@ -7,8 +7,11 @@ public partial class bgLayer : TextureRect
 	public float ScrollSpeed { get => _scrollSpeedMultiplier * 10; set => _scrollSpeedMultiplier = value / 10; }
 	[Export]
 	public bool UseVerticalParallax { get => _verticalParallaxEnabled ; set => _verticalParallaxEnabled = value;}
+	[Export]
+	public bool UseHorizontalParallax { get => _horizontalParallaxEnabled ; set => _horizontalParallaxEnabled = value;}
 	private static ship_CharacterBody2D _shipNode;
 	private float _scrollSpeedMultiplier = 1.0f;
+	private bool _horizontalParallaxEnabled;
 	private bool _verticalParallaxEnabled;
 
 	// Called when the node enters the scene tree for the first time.
@@ -21,7 +24,7 @@ public partial class bgLayer : TextureRect
 	public override void _Process(double delta)
 	{
 		// bg_layers are twice the screen width and tiled, then scaled
-		if (Position.X >= -640 * Scale.X)
+		if (_horizontalParallaxEnabled && Position.X >= -640 * Scale.X ) 
 		{
 			Position = Position with { X = Position.X - (1.0f * _scrollSpeedMultiplier) };
 		}
