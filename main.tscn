@@ -78,6 +78,9 @@ scale = Vector2(0.424, 0.424)
 texture = ExtResource("2_k23s6")
 expand_mode = 3
 stretch_mode = 3
+script = ExtResource("4_daduj")
+ScrollSpeed = 0.2
+UseVerticalParallax = true
 
 [node name="bgLayer_01" type="TextureRect" parent="background"]
 texture_repeat = 2
@@ -95,6 +98,7 @@ stretch_mode = 1
 script = ExtResource("4_daduj")
 ScrollSpeed = 1.0
 UseVerticalParallax = true
+UseHorizontalParallax = true
 
 [node name="bgLayer_02" type="TextureRect" parent="background"]
 texture_repeat = 2
@@ -115,6 +119,7 @@ flip_v = true
 script = ExtResource("4_daduj")
 ScrollSpeed = 2.0
 UseVerticalParallax = true
+UseHorizontalParallax = true
 
 [node name="ship_CharacterBody2D" type="CharacterBody2D" parent="."]
 top_level = true
