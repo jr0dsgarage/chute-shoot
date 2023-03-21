@@ -24,7 +24,7 @@ public partial class bgLayer : TextureRect
 	public override void _Process(double delta)
 	{
 		// bg_layers are twice the screen width and tiled, then scaled
-		if (_horizontalParallaxEnabled && Position.X >= -640 * Scale.X ) 
+		if (_horizontalParallaxEnabled && Position.X >= (-Size.X / 2) * Scale.X ) 
 		{
 			Position = Position with { X = Position.X - (1.0f * _scrollSpeedMultiplier) };
 		}
