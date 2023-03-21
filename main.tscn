@@ -1,13 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://djekfauxmjvsn"]
+[gd_scene load_steps=18 format=3 uid="uid://djekfauxmjvsn"]
 
 [ext_resource type="Script" path="res://main.cs" id="1_t0y1e"]
-[ext_resource type="Texture2D" uid="uid://dpofive8tywmc" path="res://images/background-ngc_346.png" id="2_k23s6"]
+[ext_resource type="Texture2D" uid="uid://b4jajisgqibuh" path="res://images/layer-0.png" id="2_eyrew"]
 [ext_resource type="Texture2D" uid="uid://bwuf20hw7ek52" path="res://images/layer-1.png" id="3_p56yx"]
 [ext_resource type="Script" path="res://code/bgLayer.cs" id="4_daduj"]
 [ext_resource type="Script" path="res://code/ship_CharacterBody2D.cs" id="5_37v2o"]
 [ext_resource type="Texture2D" uid="uid://dyptwxanewudr" path="res://sprites/puff.svg" id="6_smtl8"]
 [ext_resource type="Script" path="res://code/puff_GPUParticles2D.cs" id="7_1vi3h"]
-[ext_resource type="Texture2D" uid="uid://dxa3nucp66lsi" path="res://images/midship.png" id="8_cny21"]
+[ext_resource type="Texture2D" uid="uid://cj5r0jxw5ngp5" path="res://sprites/ship.svg" id="8_df30s"]
+[ext_resource type="Script" path="res://code/HUD.cs" id="9_cjo3e"]
 [ext_resource type="Script" path="res://code/ship_Information.cs" id="10_cbd6e"]
 
 [sub_resource type="Gradient" id="Gradient_7ycfb"]
@@ -48,7 +49,7 @@ turbulence_noise_scale = 5.0
 turbulence_influence_min = 0.05
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x2re"]
-size = Vector2(72, 49)
+size = Vector2(80, 60)
 
 [sub_resource type="LabelSettings" id="LabelSettings_drg5u"]
 line_spacing = 2.0
@@ -62,48 +63,34 @@ shadow_offset = Vector2(2, 2)
 [node name="main" type="Node2D"]
 script = ExtResource("1_t0y1e")
 
-[node name="background" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="bgLayer_00" type="TextureRect" parent="background"]
-layout_mode = 2
-offset_left = -89.0
-offset_top = -61.0
-offset_right = 1911.0
-offset_bottom = 1316.0
-scale = Vector2(0.424, 0.424)
-texture = ExtResource("2_k23s6")
-expand_mode = 3
+[node name="bgLayer_00" type="TextureRect" parent="."]
+offset_right = 640.0
+offset_bottom = 480.0
+texture = ExtResource("2_eyrew")
 stretch_mode = 3
 
-[node name="bgLayer_01" type="TextureRect" parent="background"]
+[node name="bgLayer_01" type="TextureRect" parent="."]
 texture_repeat = 2
-layout_mode = 2
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
 offset_top = 1.0
-offset_right = 1260.0
+offset_right = 1280.0
 offset_bottom = 481.0
 grow_horizontal = 2
 size_flags_stretch_ratio = 2.0
 texture = ExtResource("3_p56yx")
 stretch_mode = 1
 script = ExtResource("4_daduj")
-ScrollSpeed = 1.0
-UseVerticalParallax = true
+ScrollSpeed = 0.8
 
-[node name="bgLayer_02" type="TextureRect" parent="background"]
+[node name="bgLayer_02" type="TextureRect" parent="."]
 texture_repeat = 2
-layout_mode = 2
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
 offset_top = -240.0
-offset_right = 1260.0
+offset_right = 1280.0
 offset_bottom = 240.0
 grow_horizontal = 2
 scale = Vector2(2, 2)
@@ -113,8 +100,8 @@ stretch_mode = 1
 flip_h = true
 flip_v = true
 script = ExtResource("4_daduj")
-ScrollSpeed = 2.0
-UseVerticalParallax = true
+ScrollSpeed = 1.2
+UseParallax = true
 
 [node name="ship_CharacterBody2D" type="CharacterBody2D" parent="."]
 top_level = true
@@ -136,14 +123,17 @@ visibility_rect = Rect2(-100, -100, 220, 200)
 script = ExtResource("7_1vi3h")
 
 [node name="ship_Sprite2D" type="Sprite2D" parent="ship_CharacterBody2D"]
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("8_cny21")
+scale = Vector2(0.333, 0.5)
+texture = ExtResource("8_df30s")
 
 [node name="ship_CollisionShape2D" type="CollisionShape2D" parent="ship_CharacterBody2D"]
-position = Vector2(-1, 0.500023)
+position = Vector2(0, -7.62939e-06)
 shape = SubResource("RectangleShape2D_7x2re")
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
 [node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("9_cjo3e")
 
 [node name="ship_Information" type="Label" parent="HUD"]
 visible = false
@@ -157,16 +147,5 @@ label_settings = SubResource("LabelSettings_drg5u")
 script = ExtResource("10_cbd6e")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 position = Vector2(320, 240)
 scale = Vector2(0.459, 0.459)
-
-[node name="Area2D" type="Area2D" parent="."]
-visible = false
-
-[node name="Polygon2D" type="Polygon2D" parent="Area2D"]
-color = Color(0.0823529, 1, 1, 0.129412)
-antialiased = true
-polygon = PackedVector2Array(10, 68, 275, 67, 275, 110, 10, 110)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]

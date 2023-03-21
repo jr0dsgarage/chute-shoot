@@ -4,17 +4,17 @@ using System;
 public partial class bgLayer : TextureRect
 {
 	[Export]
-	public float ScrollSpeed { get => _scrollSpeedMultiplier * 10; set => _scrollSpeedMultiplier = value / 10; }
+	public float ScrollSpeed { get => _scrollSpeedMultiplier ; set => _scrollSpeedMultiplier = value; }
 	[Export]
 	public bool UseVerticalParallax { get => _verticalParallaxEnabled ; set => _verticalParallaxEnabled = value;}
-	private static ship_CharacterBody2D _shipNode;
+	private static ship_CharacterBody2D _shipRef;
 	private float _scrollSpeedMultiplier = 1.0f;
 	private bool _verticalParallaxEnabled;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		 _shipNode = GetNode<ship_CharacterBody2D>("/root/main/ship_CharacterBody2D");
+		 _shipRef = GetNode<ship_CharacterBody2D>("/root/main/ship_CharacterBody2D");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,7 +31,7 @@ public partial class bgLayer : TextureRect
 		}
 		if (_verticalParallaxEnabled)
 		{
-			Position = Position with {Y = Position.Y - (_shipNode.Velocity.Y / _shipNode.Speed * Scale.Y * _scrollSpeedMultiplier)};
+			Position = Position with {Y = Position.Y - (_shipRef.Velocity.Y / _shipRef.Speed / Scale.Y )};
 		}
 	}
 }
