@@ -4,7 +4,7 @@ using System;
 public partial class bgLayer : TextureRect
 {
 	[Export]
-	public float ScrollSpeed { get => _scrollSpeedMultiplier * 10; set => _scrollSpeedMultiplier = value / 10; }
+	public float ScrollSpeed { get => _scrollSpeedMultiplier / 10; set => _scrollSpeedMultiplier = value * 10; }
 	[Export]
 	public bool UseVerticalParallax { get => _verticalParallaxEnabled ; set => _verticalParallaxEnabled = value;}
 	[Export]
@@ -21,12 +21,13 @@ public partial class bgLayer : TextureRect
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	// Multiplying a value by the delta makes the result `values per second`
 	public override void _Process(double delta)
 	{
 		// bg_layers are twice the screen width and tiled, then scaled
 		if (_horizontalParallaxEnabled && Position.X >= (-Size.X / 2) * Scale.X ) 
 		{
-			Position = Position with { X = Position.X - (1.0f * _scrollSpeedMultiplier) };
+			Position = Position with { X = Position.X - (_scrollSpeedMultiplier * (float) delta) };
 		}
 		else
 		{
@@ -34,7 +35,7 @@ public partial class bgLayer : TextureRect
 		}
 		if (_verticalParallaxEnabled)
 		{
-			Position = Position with {Y = Position.Y - (_shipNode.Velocity.Y / _shipNode.Speed * Scale.Y * _scrollSpeedMultiplier)};
+			Position = Position with {Y = Position.Y - (_shipNode.Velocity.Y / _shipNode.Speed * Scale.Y * _scrollSpeedMultiplier * (float) delta)};
 		}
 	}
 }
