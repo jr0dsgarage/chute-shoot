@@ -79,7 +79,7 @@ scale = Vector2(0.424, 0.424)
 texture = ExtResource("2_k23s6")
 stretch_mode = 1
 script = ExtResource("4_daduj")
-ScrollSpeed = 0.2
+ScrollSpeed = 0.5
 UseVerticalParallax = true
 UseHorizontalParallax = true
 
@@ -97,7 +97,7 @@ size_flags_stretch_ratio = 2.0
 texture = ExtResource("3_p56yx")
 stretch_mode = 1
 script = ExtResource("4_daduj")
-ScrollSpeed = 1.0
+ScrollSpeed = 2.0
 UseVerticalParallax = true
 UseHorizontalParallax = true
 
@@ -118,7 +118,7 @@ stretch_mode = 1
 flip_h = true
 flip_v = true
 script = ExtResource("4_daduj")
-ScrollSpeed = 2.0
+ScrollSpeed = 4.0
 UseVerticalParallax = true
 UseHorizontalParallax = true
 
