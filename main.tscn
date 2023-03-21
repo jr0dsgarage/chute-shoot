@@ -69,17 +69,19 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="bgLayer_00" type="TextureRect" parent="background"]
+texture_repeat = 2
 layout_mode = 2
 offset_left = -89.0
 offset_top = -61.0
-offset_right = 1911.0
+offset_right = 3911.0
 offset_bottom = 1316.0
 scale = Vector2(0.424, 0.424)
 texture = ExtResource("2_k23s6")
-stretch_mode = 2
+stretch_mode = 1
 script = ExtResource("4_daduj")
 ScrollSpeed = 0.2
 UseVerticalParallax = true
+UseHorizontalParallax = true
 
 [node name="bgLayer_01" type="TextureRect" parent="background"]
 texture_repeat = 2
