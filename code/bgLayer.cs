@@ -14,7 +14,7 @@ public partial class bgLayer : TextureRect
 	private bool _horizontalParallaxEnabled;
 	private bool _verticalParallaxEnabled;
 
-	// Called when the node enters the scene tree for the first time.
+	// Called when the node enters the scene tree for the first time.w
 	public override void _Ready()
 	{
 		 _shipNode = GetNode<ship_CharacterBody2D>("/root/main/ship_CharacterBody2D");
@@ -24,7 +24,7 @@ public partial class bgLayer : TextureRect
 	// Multiplying a value by the delta makes the result `values per second`
 	public override void _Process(double delta)
 	{
-		// bg_layers are twice the screen width and tiled, then scaled
+		// bg_layers are twice the screen width/height and tiled, then scaled
 		if (_horizontalParallaxEnabled && Position.X >= (-Size.X / 2) * Scale.X ) 
 		{
 			Position = Position with { X = Position.X - (_scrollSpeedMultiplier * (float) delta) };

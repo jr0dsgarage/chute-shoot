@@ -1,14 +1,29 @@
-[gd_scene load_steps=17 format=3 uid="uid://djekfauxmjvsn"]
+[gd_scene load_steps=19 format=3 uid="uid://b58nh0l7cb42h"]
 
 [ext_resource type="Script" path="res://main.cs" id="1_t0y1e"]
 [ext_resource type="Texture2D" uid="uid://dpofive8tywmc" path="res://images/background-ngc_346.png" id="2_k23s6"]
-[ext_resource type="Texture2D" uid="uid://bwuf20hw7ek52" path="res://images/layer-1.png" id="3_p56yx"]
 [ext_resource type="Script" path="res://code/bgLayer.cs" id="4_daduj"]
+[ext_resource type="Texture2D" uid="uid://bwuf20hw7ek52" path="res://images/starfield.png" id="4_kof4m"]
 [ext_resource type="Script" path="res://code/ship_CharacterBody2D.cs" id="5_37v2o"]
+[ext_resource type="Texture2D" uid="uid://dx8fqxjhrjkmd" path="res://images/star-shape-01.png" id="5_ppfu0"]
 [ext_resource type="Texture2D" uid="uid://dyptwxanewudr" path="res://sprites/puff.svg" id="6_smtl8"]
 [ext_resource type="Script" path="res://code/puff_GPUParticles2D.cs" id="7_1vi3h"]
 [ext_resource type="Texture2D" uid="uid://dxa3nucp66lsi" path="res://images/midship.png" id="8_cny21"]
 [ext_resource type="Script" path="res://code/ship_Information.cs" id="10_cbd6e"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8il8o"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 240, 1)
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 50.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.2
+scale_max = 0.75
 
 [sub_resource type="Gradient" id="Gradient_7ycfb"]
 offsets = PackedFloat32Array(0, 0.761905)
@@ -83,25 +98,28 @@ ScrollSpeed = 0.5
 UseVerticalParallax = true
 UseHorizontalParallax = true
 
-[node name="bgLayer_01" type="TextureRect" parent="background"]
+[node name="starLayer_01" type="TextureRect" parent="background"]
+texture_filter = 6
 texture_repeat = 2
 layout_mode = 2
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -20.0
 offset_top = 1.0
-offset_right = 1260.0
-offset_bottom = 481.0
+offset_right = 2540.0
+offset_bottom = 961.0
 grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
 size_flags_stretch_ratio = 2.0
-texture = ExtResource("3_p56yx")
+texture = ExtResource("4_kof4m")
 stretch_mode = 1
 script = ExtResource("4_daduj")
 ScrollSpeed = 2.0
 UseVerticalParallax = true
 UseHorizontalParallax = true
 
-[node name="bgLayer_02" type="TextureRect" parent="background"]
+[node name="starLayer_02" type="TextureRect" parent="background"]
+texture_filter = 6
 texture_repeat = 2
 layout_mode = 2
 anchor_left = 0.5
@@ -109,11 +127,10 @@ anchor_right = 0.5
 offset_left = -20.0
 offset_top = -240.0
 offset_right = 1260.0
-offset_bottom = 240.0
+offset_bottom = 720.0
 grow_horizontal = 2
-scale = Vector2(2, 2)
 size_flags_stretch_ratio = 2.0
-texture = ExtResource("3_p56yx")
+texture = ExtResource("4_kof4m")
 stretch_mode = 1
 flip_h = true
 flip_v = true
@@ -121,6 +138,14 @@ script = ExtResource("4_daduj")
 ScrollSpeed = 4.0
 UseVerticalParallax = true
 UseHorizontalParallax = true
+
+[node name="stars_GPUParticles2D" type="GPUParticles2D" parent="background"]
+visible = false
+position = Vector2(680, 240)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_8il8o")
+texture = ExtResource("5_ppfu0")
+lifetime = 38.68
 
 [node name="ship_CharacterBody2D" type="CharacterBody2D" parent="."]
 top_level = true
@@ -146,7 +171,6 @@ scale = Vector2(0.33, 0.33)
 texture = ExtResource("8_cny21")
 
 [node name="ship_CollisionShape2D" type="CollisionShape2D" parent="ship_CharacterBody2D"]
-visible = false
 position = Vector2(-1, 0.500023)
 shape = SubResource("RectangleShape2D_7x2re")
 
