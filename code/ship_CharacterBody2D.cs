@@ -12,6 +12,14 @@ public partial class ship_CharacterBody2D : CharacterBody2D
 
     public void GetInput()
     {
+        if (Input.IsActionPressed("side-boost"))
+        {
+            _speed = 400;
+        }
+        else
+        {
+            _speed = 200;
+        }
         if (_bottomClamp < Position.Y || Position.Y < _shipSize / 2) // topClamp = 0 + shipSize/2;
         {
             // TODO - Screen Edge Bouncing should use Collision objects in prep for chutes
