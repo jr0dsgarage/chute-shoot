@@ -155,6 +155,7 @@ position = Vector2(100, 240)
 rotation = 1.5708
 motion_mode = 1
 script = ExtResource("5_37v2o")
+BoostSpeed = 4
 
 [node name="puff_GPUParticles2D" type="GPUParticles2D" parent="ship_CharacterBody2D"]
 show_behind_parent = true

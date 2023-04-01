@@ -25,7 +25,11 @@ public partial class ship_Information : Label
 					XVel: {_shipRef.Velocity.X}
 					YVel: {_shipRef.Velocity.Y}
 					Speed:{_shipRef.Speed}
-					VPM: {_puffRef.VelocityPuffModifier} (not-used)";
+					Speeding: {_shipRef.IsSpeedBoosting}
+					VPM: {_puffRef.VelocityPuffModifier} (not-used)
+					Boosting: {_shipRef.IsBoosting}
+					Returning: {_shipRef.IsReturning}
+					";
 			if (hotkeyToggle)
 			{
 				Hide();
