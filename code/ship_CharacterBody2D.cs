@@ -17,7 +17,7 @@ public partial class ship_CharacterBody2D : CharacterBody2D
 
     [Export]
     /// <value>Property <c>Speed</c> represents the Speed Stat of the ship, and is used to limit the speed of the ship in the vertical axis, as well as limit the ship's Boosting distance.</value>
-    public int Speed { get => _speed; set => _speed = value; }
+    public int Speed { get => _currentSpeed; set => _defaultSpeed = value; }
     [Export]
     /// <value>
     /// Property <c>BoostSpeed</c> represents the Boost Speed Stat of the ship, and is used to limit the speed of the ship in the horizontal axis, as well as limit the ship's Boosting distance.
@@ -33,7 +33,8 @@ public partial class ship_CharacterBody2D : CharacterBody2D
     private float _bottomClamp;
     private float _shipSize;
     private float _defaultPositionX = 100;
-    private int _speed = 200;
+    private int _defaultSpeed = 100;
+    private int _currentSpeed;
     private int _boostPixelsToMove;
     private float _boostDelta;
     private bool _isTurboBoosting = false;
@@ -50,7 +51,7 @@ public partial class ship_CharacterBody2D : CharacterBody2D
         {
             _isSpeedBoosting = true;
         }
-        else if (!Input.IsActionPressed("speed-boost"))
+        else if (!Input.IsActionPressed("speed-boost"))  // seems weird but it doesn't work if I just use 'else'
         {
             _isSpeedBoosting = false;
         }
@@ -58,7 +59,6 @@ public partial class ship_CharacterBody2D : CharacterBody2D
         {
             if (!_isTurboBoosting)
                 _isTurboBoosting = true;
-
         }
 
         if (_bottomClamp < Position.Y || Position.Y < _shipSize / 2) // topClamp = 0 + _shipSize/2;
@@ -68,7 +68,7 @@ public partial class ship_CharacterBody2D : CharacterBody2D
         }
         else
         {
-            Velocity = Transform.X * Input.GetAxis("up", "down") * _speed;
+            Velocity = Transform.X * Input.GetAxis("up", "down") * _currentSpeed;
         }
     }
 
@@ -78,7 +78,7 @@ public partial class ship_CharacterBody2D : CharacterBody2D
         {
             if (Position.X < _defaultPositionX + _boostPixelsToMove)
             { 
-                Velocity = -Transform.Y * _speed * _boostDelta * _boostPixelsToMove; 
+                Velocity = -Transform.Y * _currentSpeed * _boostDelta * _boostPixelsToMove; 
             }
             if (Position.X >= _defaultPositionX + _boostPixelsToMove)
             {
@@ -89,7 +89,7 @@ public partial class ship_CharacterBody2D : CharacterBody2D
         else if (Position.X > _defaultPositionX)
         {
             Velocity = Velocity with { X = 0 };
-            Position = Position with { X = Position.X - 1 + _boostDelta * _speed / _boostPixelsToMove };
+            Position = Position with { X = Position.X - 1 + _boostDelta * _currentSpeed / _boostPixelsToMove };
         }
         else if (Position.X <= _defaultPositionX)
         {
@@ -103,12 +103,16 @@ public partial class ship_CharacterBody2D : CharacterBody2D
         _shipSize = GetNode<CollisionShape2D>("ship_CollisionShape2D").Shape.GetRect().Size.X;
         _bottomClamp = 480 - _shipSize / 2; // TODO - 480 should be a variable set by the screen size from the main scene
         _boostDelta = BoostSpeed * (float)delta;
+        var doubleSpeed = _defaultSpeed * 2;
+        
+        if (_isSpeedBoosting)
+            _currentSpeed = doubleSpeed;
+        else
+            _currentSpeed = _defaultSpeed;
+
         if (!_isTurboBoosting && !_isReturningFromTurboBoost)
         {
-            if (_isSpeedBoosting)
-                _speed = 400;
-            else
-                _speed = 200;
+            
             GetInput();
         }
         BoostAndReturn();
