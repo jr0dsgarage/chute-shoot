@@ -86,10 +86,10 @@ public partial class ship_CharacterBody2D : CharacterBody2D
                 _isReturningFromTurboBoost = true;
             }
         }
-        else if (Position.X > _defaultPositionX)
+        else if (Position.X > _defaultPositionX && _isReturningFromTurboBoost)
         {
             Velocity = Velocity with { X = 0 };
-            Position = Position with { X = Position.X - 1 + _boostDelta * _currentSpeed / _boostPixelsToMove };
+            Position = Position with { X = Position.X - (((_boostDelta * _currentSpeed) + BoostSpeed) * (1.0f/BoostSpeed))};
         }
         else if (Position.X <= _defaultPositionX)
         {
