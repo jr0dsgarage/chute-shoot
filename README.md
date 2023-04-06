@@ -8,6 +8,6 @@ I'm trying mechanic ideas and testing my `C#` skills while learning `Godot 4.0`.
 
 The Result so far:
 
-![](renders/chute-shoot-preview.apng)
+![Chute Shoot Preview Animation](renders/chute-shoot-preview.apng)
 
 Note the complete lack of chutes at this stage, but check out that sweet, sweet parallax effect.
