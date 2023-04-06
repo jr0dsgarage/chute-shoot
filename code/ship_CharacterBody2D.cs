@@ -47,15 +47,15 @@ public partial class ship_CharacterBody2D : CharacterBody2D
     public void GetInput()
     {
 
-        if (Input.IsActionPressed("speed-boost") && !_isSpeedBoosting && !_isTurboBoosting)
+        if (Input.IsActionPressed(action: "speed-boost") && !_isSpeedBoosting && !_isTurboBoosting)
         {
             _isSpeedBoosting = true;
         }
-        else if (!Input.IsActionPressed("speed-boost"))  // seems weird but it doesn't work if I just use 'else'
+        else if (!Input.IsActionPressed(action: "speed-boost"))  // seems weird but it doesn't work if I just use 'else'
         {
             _isSpeedBoosting = false;
         }
-        if (Input.IsActionJustPressed("turbo-boost"))
+        if (Input.IsActionJustPressed(action: "turbo-boost"))
         {
             if (!_isTurboBoosting)
                 _isTurboBoosting = true;
@@ -68,7 +68,7 @@ public partial class ship_CharacterBody2D : CharacterBody2D
         }
         else
         {
-            Velocity = Transform.X * Input.GetAxis("up", "down") * _currentSpeed;
+            Velocity = Transform.X * Input.GetAxis(negativeAction: "up", positiveAction: "down") * _currentSpeed;
         }
     }
 
@@ -100,10 +100,10 @@ public partial class ship_CharacterBody2D : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
-        _shipSize = GetNode<CollisionShape2D>("ship_CollisionShape2D").Shape.GetRect().Size.X;
+        _shipSize = GetNode<CollisionShape2D>(path: "ship_CollisionShape2D").Shape.GetRect().Size.X;
         _bottomClamp = 480 - _shipSize / 2; // TODO - 480 should be a variable set by the screen size from the main scene
         _boostDelta = BoostSpeed * (float)delta;
-        var doubleSpeed = _defaultSpeed * 2;
+        int doubleSpeed = _defaultSpeed * 2;
         
         if (_isSpeedBoosting)
             _currentSpeed = doubleSpeed;
