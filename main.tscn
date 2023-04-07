@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b58nh0l7cb42h"]
+[gd_scene load_steps=21 format=3 uid="uid://b58nh0l7cb42h"]
 
 [ext_resource type="Script" path="res://main.cs" id="1_t0y1e"]
 [ext_resource type="Texture2D" uid="uid://dpofive8tywmc" path="res://images/background-ngc_346.png" id="2_k23s6"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://code/puff_GPUParticles2D.cs" id="7_1vi3h"]
 [ext_resource type="Texture2D" uid="uid://dxa3nucp66lsi" path="res://images/midship.png" id="8_cny21"]
 [ext_resource type="Script" path="res://code/ship_Information.cs" id="10_cbd6e"]
+[ext_resource type="Script" path="res://code/SpeedBoostBar.cs" id="11_t5q81"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8il8o"]
 emission_shape = 3
@@ -64,6 +65,18 @@ turbulence_influence_min = 0.05
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x2re"]
 size = Vector2(72, 49)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fljfo"]
+bg_color = Color(0.890196, 0.611765, 0.435294, 0.8)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0.501961)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_drg5u"]
 line_spacing = 2.0
@@ -167,17 +180,34 @@ texture = ExtResource("6_smtl8")
 lifetime = 2.0
 visibility_rect = Rect2(-100, -100, 220, 200)
 script = ExtResource("7_1vi3h")
+BasePuffsAmount = null
 
 [node name="ship_Sprite2D" type="Sprite2D" parent="ship_CharacterBody2D"]
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("8_cny21")
 
 [node name="ship_CollisionShape2D" type="CollisionShape2D" parent="ship_CharacterBody2D"]
+visible = false
 position = Vector2(-1, 0.500023)
 shape = SubResource("RectangleShape2D_7x2re")
 
 [node name="ship_CollisionPolygon2D" type="CollisionPolygon2D" parent="ship_CharacterBody2D"]
+visible = false
 polygon = PackedVector2Array(-18.0001, -26.9999, -22.0001, -23.9999, -22.0001, -18.9999, -24.0001, -18.9999, -27.0001, -15.9999, -27, -8.9999, -33, -1.99988, -37, -1.99986, -36.9999, 14.0001, -27.9999, 22.0001, -27.9999, 25.0001, -22.9999, 25.0001, -22.9999, 22.0001, -20.9999, 22.0001, -14.9999, 18.0001, -11.9999, 23, -7.99991, 23, -5.99991, 26, 4.00009, 26, 7.00009, 23, 10.0001, 23, 14.0001, 17.9999, 18.0001, 21.9999, 21.0001, 21.9999, 21.0001, 24.9999, 26.0001, 24.9999, 26.0001, 21.9999, 36.0001, 12.9999, 36, -2.00013, 31, -2.00011, 26, -9.00009, 25.9999, -16.0001, 22.9999, -19.0001, 19.9999, -19.0001, 19.9999, -24.0001, 15.9999, -27.0001, 16, -6.00005, 9.99998, -6.00004, 9.99994, -18, 4.99992, -24, -7.00008, -24, -12.0001, -18, -12, -5.99995, -18, -5.99993)
+
+[node name="ProgressBar" type="ProgressBar" parent="ship_CharacterBody2D"]
+clip_contents = true
+offset_left = -9.0
+offset_top = 17.0
+offset_right = 24.0
+offset_bottom = 33.0
+rotation = -1.5708
+theme_override_styles/fill = SubResource("StyleBoxFlat_fljfo")
+value = 100.0
+rounded = true
+show_percentage = false
+script = ExtResource("11_t5q81")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fljfo")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -191,6 +221,16 @@ text = "default
 text"
 label_settings = SubResource("LabelSettings_drg5u")
 script = ExtResource("10_cbd6e")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="HUD"]
+offset_left = 250.0
+offset_top = 419.0
+offset_right = 388.0
+offset_bottom = 462.0
+max_value = 10.0
+rounded = true
+tint_under = Color(0, 0.498039, 0, 0.498039)
+tint_progress = Color(0, 1, 0, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false

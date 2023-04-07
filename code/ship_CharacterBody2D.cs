@@ -28,6 +28,7 @@ public partial class ship_CharacterBody2D : CharacterBody2D
     public bool IsReturning { get => _isReturningFromTurboBoost; set => _isReturningFromTurboBoost = value; }
     public float BoostTimeToReturn { get => _boostDelta; set => _boostDelta = value; }
     public bool IsSpeedBoosting { get => _isSpeedBoosting; set => _isSpeedBoosting = value; }
+    public bool CanSpeedBoost { get => _canSpeedBoost; set => _canSpeedBoost = value; }
     public float ShipSize { get => _shipSize; set => _shipSize = value; }
 
     private float _bottomClamp;
@@ -40,16 +41,17 @@ public partial class ship_CharacterBody2D : CharacterBody2D
     private bool _isTurboBoosting = false;
     private bool _isReturningFromTurboBoost = true;
     private bool _isSpeedBoosting = false;
+    private bool _canSpeedBoost = true;
 
     /// <summary>
     /// Function <c>GetInput</c> is called every frame and makes the ship take actions based on the player's input.
     /// </summary>
     public void GetInput()
     {
-
         if (Input.IsActionPressed(action: "speed-boost") && !_isSpeedBoosting && !_isTurboBoosting)
         {
-            _isSpeedBoosting = true;
+            if (_canSpeedBoost)
+                _isSpeedBoosting = true;
         }
         else if (!Input.IsActionPressed(action: "speed-boost"))  // seems weird but it doesn't work if I just use 'else'
         {
