@@ -14,7 +14,7 @@ public partial class ship_Information : Label
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
     {
-		var hotkeyToggle = Input.IsActionJustPressed(action: "debugInfoToggle");
+		bool hotkeyToggle = Input.IsActionJustPressed(action: "debugInfoToggle");
 		if (Visible)
 		{
 			Text = $@"Ship Information:
