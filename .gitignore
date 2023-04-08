@@ -1,6 +1,8 @@
 # Godot 4+ specific ignores
 .godot/**
 *.psd
+*.old
 /.vs/
 */Thumbs.db
 images/gude**
+
