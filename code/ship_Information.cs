@@ -9,15 +9,15 @@ public partial class ship_Information : Label
     public override void _Ready()
     {
         _shipRef = GetNode<ship_CharacterBody2D>(path: "/root/main/ship_CharacterBody2D");
-}
+    }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
     {
-		bool hotkeyToggle = Input.IsActionJustPressed(action: "debugInfoToggle");
-		if (Visible)
-		{
-			Text = $@"Ship Information:
+        bool hotkeyToggle = Input.IsActionJustPressed(action: "debugInfoToggle");
+        if (Visible)
+        {
+            Text = $@"Ship Information:
 					XPos: {_shipRef.Position.X}
 					Ypos: {_shipRef.Position.Y}
 					XVel: {_shipRef.Velocity.X}
@@ -28,14 +28,10 @@ public partial class ship_Information : Label
 					TBoosting: {_shipRef.IsTurboBoosting}
 					Returning: {_shipRef.IsReturning}
 					";
-			if (hotkeyToggle)
-			{
-				Hide();
-			}
-		}
-		else if (hotkeyToggle)
-		{
-				Show();
-		}        
+            if (hotkeyToggle)
+                Hide();
+        }
+        else if (hotkeyToggle)
+            Show();
     }
 }
