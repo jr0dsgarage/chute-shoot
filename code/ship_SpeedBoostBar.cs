@@ -28,8 +28,6 @@ public partial class SpeedBoostBar : ProgressBar
 		{
 			_shipRef.IsSpeedBoosting = false;
 			_shipRef.CanSpeedBoost = false;
-			// change the theme_override_styles/background color to red
-			
 		}
 		else if (Value >= 100)
 			_shipRef.CanSpeedBoost = true;
