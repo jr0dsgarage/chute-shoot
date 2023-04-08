@@ -1,6 +1,6 @@
 # Chute Shoot
 
-*Shoot the Chutes and grab the Loots!*
+*Shoot the Chutes and grab the Loots!*™️
 
 My first [Godot](https://godotengine.org/) project, a shoot-em-up idea based off of a pun.  
 
