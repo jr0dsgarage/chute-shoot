@@ -48,20 +48,24 @@ public partial class ship_CharacterBody2D : CharacterBody2D
     /// </summary>
     public void GetInput()
     {
-        if (_canSpeedBoost && Input.IsActionPressed(action: "speed-boost") && !_isSpeedBoosting && !_isTurboBoosting )
+        // Boost Handling
+        if (!_isTurboBoosting)
         {
+            if (_canSpeedBoost && Input.IsActionPressed("speed-boost") && !_isSpeedBoosting)
+            {
                 _isSpeedBoosting = true;
-        }
-        else if (!Input.IsActionPressed(action: "speed-boost"))  // seems weird but it doesn't work if I just use 'else'
-        {
-            _isSpeedBoosting = false;
-        }
-        if (Input.IsActionJustPressed(action: "turbo-boost"))
-        {
-            if (!_isTurboBoosting)
+            }
+            else if (!Input.IsActionPressed("speed-boost"))  // seems weird but it doesn't work if I just use 'else'
+            {
+                _isSpeedBoosting = false;
+            }
+            if (Input.IsActionJustPressed("turbo-boost"))
+            {
                 _isTurboBoosting = true;
+            }
         }
 
+        // Set ship's horizontal Velocity using the player's Up/Down input
         if (_bottomClamp < Position.Y || Position.Y < _shipSize / 2) // topClamp = 0 + _shipSize/2;
         {
             // TODO - Screen Edge Bouncing should use Collision objects in prep for chutes
@@ -69,7 +73,7 @@ public partial class ship_CharacterBody2D : CharacterBody2D
         }
         else
         {
-            Velocity = Transform.X * Input.GetAxis(negativeAction: "up", positiveAction: "down") * _currentSpeed;
+            Velocity = Transform.X * Input.GetAxis("up", "down") * _currentSpeed;
         }
     }
 
@@ -78,8 +82,8 @@ public partial class ship_CharacterBody2D : CharacterBody2D
         if (_isTurboBoosting)
         {
             if (Position.X < _defaultPositionX + _boostPixelsToMove)
-            { 
-                Velocity = -Transform.Y * _currentSpeed * _boostDelta * _boostPixelsToMove; 
+            {
+                Velocity = -Transform.Y * _currentSpeed * _boostDelta * _boostPixelsToMove;
             }
             if (Position.X >= _defaultPositionX + _boostPixelsToMove)
             {
@@ -90,7 +94,7 @@ public partial class ship_CharacterBody2D : CharacterBody2D
         else if (Position.X > _defaultPositionX && _isReturningFromTurboBoost)
         {
             Velocity = Velocity with { X = 0 };
-            Position = Position with { X = Position.X - (((_boostDelta * _currentSpeed) + BoostSpeed) * (1.0f/BoostSpeed))};
+            Position = Position with { X = Position.X - (((_boostDelta * _currentSpeed) + BoostSpeed) * (1.0f / BoostSpeed)) };
         }
         else if (Position.X <= _defaultPositionX)
         {
@@ -101,11 +105,11 @@ public partial class ship_CharacterBody2D : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
-        _shipSize = GetNode<CollisionShape2D>(path: "ship_CollisionShape2D").Shape.GetRect().Size.X;
+        _shipSize = GetNode<CollisionShape2D>("ship_CollisionShape2D").Shape.GetRect().Size.X;
         _bottomClamp = 480 - _shipSize / 2; // TODO - 480 should be a variable set by the screen size from the main scene
         _boostDelta = BoostSpeed * (float)delta;
         int doubleSpeed = _defaultSpeed * 2;
-        
+
         if (_isSpeedBoosting)
             _currentSpeed = doubleSpeed;
         else
@@ -113,7 +117,6 @@ public partial class ship_CharacterBody2D : CharacterBody2D
 
         if (!_isTurboBoosting && !_isReturningFromTurboBoost)
         {
-            
             GetInput();
         }
         BoostAndReturn();

@@ -66,8 +66,8 @@ turbulence_influence_min = 0.05
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x2re"]
 size = Vector2(72, 49)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uphnr"]
-bg_color = Color(0.760784, 0.760784, 0.760784, 0.25098)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdhso"]
+bg_color = Color(0.792157, 0.792157, 0.792157, 0.164706)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fljfo"]
 bg_color = Color(0.890196, 0.611765, 0.435294, 0.8)
@@ -204,7 +204,7 @@ offset_top = 17.0
 offset_right = 24.0
 offset_bottom = 33.0
 rotation = -1.5708
-theme_override_styles/background = SubResource("StyleBoxFlat_uphnr")
+theme_override_styles/background = SubResource("StyleBoxFlat_fdhso")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fljfo")
 value = 100.0
 rounded = true
