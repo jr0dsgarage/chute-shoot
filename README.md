@@ -1,6 +1,10 @@
-# chute-shoot
+# Chute Shoot
 
-My first [Godot](https://godotengine.org/) project, a shoot-em-up idea based off of a pun.
+*Shoot the Chutes and grab the loot!*
+
+My first [Godot](https://godotengine.org/) project, a shoot-em-up idea based off of a pun.  
+
+There is no shooting.  You are the Shooter.  The Chute Shooter. 
 
 I'm trying mechanic ideas and testing my `C#` skills while learning `Godot 4.0`.
 
