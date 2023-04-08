@@ -24,7 +24,7 @@ public partial class ship_CharacterBody2D : CharacterBody2D
     /// BoostSpeeds can be between 1 and 10, but moves the ship 10 to 100 pixels per second
     /// </value>
     public int BoostSpeed { get => _boostPixelsToMove / 10; set => _boostPixelsToMove = value * 10; }
-    public bool IsBoosting { get => _isTurboBoosting; set => _isTurboBoosting = value; }
+    public bool IsTurboBoosting { get => _isTurboBoosting; set => _isTurboBoosting = value; }
     public bool IsReturning { get => _isReturningFromTurboBoost; set => _isReturningFromTurboBoost = value; }
     public float BoostTimeToReturn { get => _boostDelta; set => _boostDelta = value; }
     public bool IsSpeedBoosting { get => _isSpeedBoosting; set => _isSpeedBoosting = value; }
@@ -41,16 +41,15 @@ public partial class ship_CharacterBody2D : CharacterBody2D
     private bool _isTurboBoosting = false;
     private bool _isReturningFromTurboBoost = true;
     private bool _isSpeedBoosting = false;
-    private bool _canSpeedBoost = true;
+    private bool _canSpeedBoost = true; // set to false by SpeedBoostBar.cs when the bar's Value is 0
 
     /// <summary>
     /// Function <c>GetInput</c> is called every frame and makes the ship take actions based on the player's input.
     /// </summary>
     public void GetInput()
     {
-        if (Input.IsActionPressed(action: "speed-boost") && !_isSpeedBoosting && !_isTurboBoosting)
+        if (_canSpeedBoost && Input.IsActionPressed(action: "speed-boost") && !_isSpeedBoosting && !_isTurboBoosting )
         {
-            if (_canSpeedBoost)
                 _isSpeedBoosting = true;
         }
         else if (!Input.IsActionPressed(action: "speed-boost"))  // seems weird but it doesn't work if I just use 'else'
