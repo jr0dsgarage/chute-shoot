@@ -8,13 +8,13 @@ public partial class ship_Information : Label
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        _shipRef = GetNode<ship_CharacterBody2D>("/root/main/ship_CharacterBody2D");
+        _shipRef = GetNode<ship_CharacterBody2D>(path: "/root/main/ship_CharacterBody2D");
 }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
     {
-		var hotkeyToggle = Input.IsActionJustPressed("debugInfoToggle");
+		var hotkeyToggle = Input.IsActionJustPressed(action: "debugInfoToggle");
 		if (Visible)
 		{
 			Text = $@"Ship Information:
