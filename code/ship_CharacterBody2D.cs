@@ -93,7 +93,7 @@ public partial class ship_CharacterBody2D : CharacterBody2D
         }
         else if (Position.X > _defaultPositionX && _isReturningFromTurboBoost)
         {
-            Velocity = Velocity with { X = 0 };
+            Velocity = Velocity with { X = 0 }; // small X velocity is introduced during GetInput, so we set it to 0 to avoid bugs
             Position = Position with { X = Position.X - (((_boostDelta * _currentSpeed) + BoostSpeed) * (1.0f / BoostSpeed)) };
         }
         else if (Position.X <= _defaultPositionX)
@@ -103,13 +103,17 @@ public partial class ship_CharacterBody2D : CharacterBody2D
         }
     }
 
-    public override void _PhysicsProcess(double delta)
+    public override void _Ready()
     {
+        // can be moved back into _PhysicsProcess if the shipsize is going to change during TurboBoost
         _shipSize = GetNode<CollisionShape2D>("ship_CollisionShape2D").Shape.GetRect().Size.X;
         _bottomClamp = 480 - _shipSize / 2; // TODO - 480 should be a variable set by the screen size from the main scene
+    }
+
+    public override void _PhysicsProcess(double delta)
+    {        
         _boostDelta = BoostSpeed * (float)delta;
         int doubleSpeed = _defaultSpeed * 2;
-
         if (_isSpeedBoosting)
             _currentSpeed = doubleSpeed;
         else
