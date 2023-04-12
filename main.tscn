@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cyutm3ep8p0v0"]
+[gd_scene load_steps=21 format=3 uid="uid://cyutm3ep8p0v0"]
 
 [ext_resource type="Script" path="res://main.cs" id="1_t0y1e"]
 [ext_resource type="Texture2D" uid="uid://dpofive8tywmc" path="res://images/background-ngc_346.png" id="2_k23s6"]
@@ -66,11 +66,8 @@ turbulence_influence_min = 0.05
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x2re"]
 size = Vector2(72, 49)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdhso"]
-bg_color = Color(0.792157, 0.792157, 0.792157, 0.164706)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fljfo"]
-bg_color = Color(0.890196, 0.611765, 0.435294, 0.8)
+bg_color = Color(0.94902, 0.796078, 0.572549, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -204,7 +201,6 @@ offset_top = 17.0
 offset_right = 24.0
 offset_bottom = 33.0
 rotation = -1.5708
-theme_override_styles/background = SubResource("StyleBoxFlat_fdhso")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fljfo")
 value = 100.0
 rounded = true
