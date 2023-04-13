@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://b1ej21m43xjj2"
+uid="uid://dy1tkbaeo104t"
 path="res://.godot/imported/Ship-looped.wav-58fe3af8ed60eaf2725a04b6b5c2b81b.sample"
 
 [deps]
@@ -18,7 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop_mode=1
+edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1
 compress/mode=0
